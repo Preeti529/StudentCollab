@@ -7,8 +7,12 @@ if (!apiKey) {
 }
 
 const client = new GoogleGenerativeAI(apiKey);
+//const model = client.getGenerativeModel({ model: "gemini-1.5-flash" });
+//const model = client.getGenerativeModel({ model: "gemini 1.5" });
+//const model = client.getGenerativeModel({ model: "gemini-1.5-flash" });
+//const model = client.getGenerativeModel({ model: "gemini-pro" });
+//const model = client.getGenerativeModel({ model: "gemini-1.5-pro" });
 const model = client.getGenerativeModel({ model: "gemini-3.5-flash" });
-
 export async function analyzeSkills(userSkills: string[]): Promise<string> {
   const prompt = `
     I have these skills: ${userSkills.join(", ")}
